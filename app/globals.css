@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html, body {
+  height: 100%;
+  background: #05060a;
+}
+
+body {
+  font-family: 'Share Tech Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: #dffcff;
+  overflow-x: hidden;
+}
+
+.cyber-scanlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.03),
+    rgba(255,255,255,0.03) 1px,
+    rgba(0,0,0,0) 2px,
+    rgba(0,0,0,0) 4px
+  );
+  mix-blend-mode: screen;
+  animation: scan 12s linear infinite;
+}
+
+@keyframes scan {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 100%; }
+}
+
+.cyber-glow {
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(circle at 50% 20%, rgba(66,245,255,0.12), transparent 50%),
+              radial-gradient(circle at 80% 70%, rgba(29,233,255,0.08), transparent 45%);
+  filter: blur(12px);
+  pointer-events: none;
+}
+
+.neon-outline {
+  box-shadow: 0 0 18px rgba(66,245,255,0.35), 0 0 50px rgba(66,245,255,0.18);
+}
+
+.button-cyber {
+  border: 1px solid rgba(66,245,255,0.6);
+  padding: 12px 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  transition: all 0.2s ease;
+  background: rgba(4, 10, 16, 0.7);
+}
+
+.button-cyber:hover {
+  background: rgba(66,245,255,0.08);
+  transform: translateY(-1px);
+}
+
+.panel-cyber {
+  background: rgba(6, 10, 18, 0.9);
+  border: 1px solid rgba(66,245,255,0.25);
+  box-shadow: 0 0 20px rgba(66,245,255,0.12);
+}
